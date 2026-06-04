@@ -1,0 +1,7 @@
+node_modules/
+.tmp_refs/
+dist/
+test-app/dist/
+test-app/node_modules/
+*.tgz
+*.log
