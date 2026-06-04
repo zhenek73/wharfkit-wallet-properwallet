@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "description": "ProperWallet plugin for WharfKit SessionKit.",
   "license": "MIT",
-  "homepage": "https://github.com/properwallet/wharfkit-wallet-properwallet",
+  "homepage": "https://github.com/zhenek73/wharfkit-wallet-properwallet#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/properwallet/wharfkit-wallet-properwallet.git"
+    "url": "git+https://github.com/zhenek73/wharfkit-wallet-properwallet.git"
   },
   "bugs": {
-    "url": "https://github.com/properwallet/wharfkit-wallet-properwallet/issues"
+    "url": "https://github.com/zhenek73/wharfkit-wallet-properwallet/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "wharfkit",

@@ -39,7 +39,9 @@ export class WalletPluginProperWallet extends AbstractWalletPlugin implements Wa
 
   async login(_context: LoginContext): Promise<WalletPluginLoginResponse> {
     const provider = this.getProvider()
+    console.log('[ProperWallet] provider detected')
     const account = await provider.getAccount()
+    console.log('[ProperWallet] login success')
 
     return {
       chain: Checksum256.from(account.chainId),
@@ -55,12 +57,14 @@ export class WalletPluginProperWallet extends AbstractWalletPlugin implements Wa
     context: TransactContext
   ): Promise<WalletPluginSignResponse> {
     const provider = this.getProvider()
-    const response = await provider.transact({
+    console.log('[ProperWallet] sign called')
+    const response = await provider.signTransaction({
       chainId: String(context.chain.id),
       permissionLevel: String(context.permissionLevel),
       transaction: resolved.transaction,
       request: String(resolved.request),
     })
+    console.log('[ProperWallet] sign success')
 
     return {
       signatures: response.signatures.map((signature) => Signature.from(signature)),

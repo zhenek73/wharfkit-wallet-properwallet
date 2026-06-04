@@ -5,6 +5,15 @@ interface ProperWalletAccount {
     permission: string;
     chainId: string;
 }
+interface ProperWalletSignTransactionArgs {
+    chainId: string;
+    permissionLevel: string;
+    transaction: unknown;
+    request: string;
+}
+interface ProperWalletSignTransactionResponse {
+    signatures: string[];
+}
 interface ProperWalletTransactResponse {
     signatures: string[];
     transactionId?: string;
@@ -12,6 +21,7 @@ interface ProperWalletTransactResponse {
 interface ProperWalletProvider {
     isProperWallet: true;
     getAccount(): Promise<ProperWalletAccount>;
+    signTransaction(args: ProperWalletSignTransactionArgs): Promise<ProperWalletSignTransactionResponse>;
     transact(args: unknown): Promise<ProperWalletTransactResponse>;
     signArbitrary(data: string): Promise<string>;
     logout(): Promise<void>;
@@ -33,4 +43,4 @@ declare class WalletPluginProperWallet extends AbstractWalletPlugin implements W
     private getProvider;
 }
 
-export { type ProperWalletAccount, type ProperWalletProvider, type ProperWalletTransactResponse, WalletPluginProperWallet };
+export { type ProperWalletAccount, type ProperWalletProvider, type ProperWalletSignTransactionArgs, type ProperWalletSignTransactionResponse, type ProperWalletTransactResponse, WalletPluginProperWallet };
