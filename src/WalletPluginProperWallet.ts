@@ -32,8 +32,8 @@ export class WalletPluginProperWallet extends AbstractWalletPlugin implements Wa
     name: 'ProperWallet',
     description: 'Use the ProperWallet account available in Discovery.',
     logo: {
-      dark: 'https://webdex.space/icons/webdexlogo.png',
-      light: 'https://webdex.space/icons/webdexlogo.png',
+      dark: 'https://www.webdex.space/icons/properwallet-logo.svg',
+      light: 'https://www.webdex.space/icons/properwallet-logo.svg',
     },
   })
 
